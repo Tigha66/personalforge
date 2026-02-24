@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PersonalForge - AI Personal Operations Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2); }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 min-h-screen text-white">
+  <!-- Header -->
+  <header class="border-b border-white/10 bg-slate-900/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+          <i class="fas fa-robot text-white"></i>
+        </div>
+        <span class="text-xl font-bold">PersonalForge</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-slate-400 text-sm">AI Personal Operations Assistant</span>
+        <button class="bg-indigo-500 hover:bg-indigo-400 px-4 py-2 rounded-xl font-medium">
+          <i class="fas fa-plus mr-2"></i>New Task
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <!-- Stats -->
+    <div class="grid grid-cols-4 gap-4 mb-8">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-envelope text-indigo-400"></i>
+          <span class="text-slate-400 text-sm">Emails Processed</span>
+        </div>
+        <p class="text-3xl font-bold">1,247</p>
+        <p class="text-green-400 text-sm mt-1">+156 this week</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-calendar-check text-green-400"></i>
+          <span class="text-slate-400 text-sm">Events Scheduled</span>
+        </div>
+        <p class="text-3xl font-bold">89</p>
+        <p class="text-green-400 text-sm mt-1">+12 this week</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-tasks text-yellow-400"></i>
+          <span class="text-slate-400 text-sm">Tasks Created</span>
+        </div>
+        <p class="text-3xl font-bold">234</p>
+        <p class="text-green-400 text-sm mt-1">+45 this week</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-clock text-purple-400"></i>
+          <span class="text-slate-400 text-sm">Time Saved</span>
+        </div>
+        <p class="text-3xl font-bold">48h</p>
+        <p class="text-green-400 text-sm mt-1">This month</p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Email Triage -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <i class="fas fa-envelope text-indigo-400"></i> Email Triage
+        </h2>
+        <div class="space-y-3">
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Meeting Request: Q1 Review</p>
+                <p class="text-slate-400 text-sm">From: john@company.com</p>
+              </div>
+              <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded">Important</span>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button class="bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded text-xs"><i class="fas fa-tasks mr-1"></i>Create Task</button>
+              <button class="bg-green-500/20 text-green-400 px-3 py-1 rounded text-xs"><i class="fas fa-calendar mr-1"></i>Schedule</button>
+              <button class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-xs"><i class="fas fa-trash mr-1"></i>Archive</button>
+            </div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Newsletter: Weekly Digest</p>
+                <p class="text-slate-400 text-sm">From: news@updates.com</p>
+              </div>
+              <span class="bg-blue-500/20 text-blue-400 text-xs px-2 py-1 rounded">Newsletter</span>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button class="bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded text-xs"><i class="fas fa-tasks mr-1"></i>Create Task</button>
+              <button class="bg-green-500/20 text-green-400 px-3 py-1 rounded text-xs"><i class="fas fa-archive mr-1"></i>Archive</button>
+            </div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Invoice: Payment Due</p>
+                <p class="text-slate-400 text-sm">From: billing@service.com</p>
+              </div>
+              <span class="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded">Urgent</span>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button class="bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded text-xs"><i class="fas fa-tasks mr-1"></i>Create Task</button>
+              <button class="bg-green-500/20 text-green-400 px-3 py-1 rounded text-xs"><i class="fas fa-check mr-1"></i>Paid</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendar Events -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <i class="fas fa-calendar text-green-400"></i> Suggested Events
+        </h2>
+        <div class="space-y-3">
+          <div class="bg-white/5 rounded-xl p-4 border-l-4 border-green-500">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Team Standup</p>
+                <p class="text-slate-400 text-sm">AI Suggestion: Daily at 9 AM</p>
+              </div>
+              <button class="bg-green-500 text-white px-3 py-1 rounded text-xs"><i class="fas fa-plus mr-1"></i>Add</button>
+            </div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 border-l-4 border-blue-500">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Weekly Review</p>
+                <p class="text-slate-400 text-sm">AI Suggestion: Friday 4 PM</p>
+              </div>
+              <button class="bg-green-500 text-white px-3 py-1 rounded text-xs"><i class="fas fa-plus mr-1"></i>Add</button>
+            </div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 border-l-4 border-purple-500">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-medium">Focus Time</p>
+                <p class="text-slate-400 text-sm">AI Suggestion: Tue/Thu 2-4 PM</p>
+              </div>
+              <button class="bg-green-500 text-white px-3 py-1 rounded text-xs"><i class="fas fa-plus mr-1"></i>Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tasks -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <i class="fas fa-tasks text-yellow-400"></i> Task Automation
+        </h2>
+        <div class="space-y-3">
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center gap-3 mb-2">
+              <input type="checkbox" class="w-5 h-5 rounded bg-white/10 border-white/20">
+              <p class="font-medium">Review Q1 marketing metrics</p>
+            </div>
+            <p class="text-slate-400 text-sm ml-8">From: john@company.com → Created by AI</p>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center gap-3 mb-2">
+              <input type="checkbox" class="w-5 h-5 rounded bg-white/10 border-white/20">
+              <p class="font-medium">Follow up with client proposal</p>
+            </div>
+            <p class="text-slate-400 text-sm ml-8">Due: Tomorrow → Created by AI</p>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="flex items-center gap-3 mb-2">
+              <input type="checkbox" class="w-5 h-5 rounded bg-white/10 border-white/20">
+              <p class="font-medium">Prepare presentation slides</p>
+            </div>
+            <p class="text-slate-400 text-sm ml-8">From: meeting notes → Created by AI</p>
+          </div>
+        </div>
+        <button class="w-full mt-4 bg-indigo-500 hover:bg-indigo-400 py-3 rounded-xl font-medium">
+          <i class="fas fa-magic mr-2"></i>Generate More Tasks
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="mt-8">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+        <i class="fas fa-bolt text-yellow-400"></i> Quick Actions
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <button class="card-hover bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/10 rounded-xl p-5 transition-all duration-300">
+          <i class="fas fa-envelope text-2xl text-indigo-400 mb-3"></i>
+          <p class="font-bold">Process Emails</p>
+          <p class="text-slate-400 text-sm">AI triage & categorize</p>
+        </button>
+        <button class="card-hover bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-white/10 rounded-xl p-5 transition-all duration-300">
+          <i class="fas fa-calendar-plus text-2xl text-green-400 mb-3"></i>
+          <p class="font-bold">Schedule Event</p>
+          <p class="text-slate-400 text-sm">AI suggests best time</p>
+        </button>
+        <button class="card-hover bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-white/10 rounded-xl p-5 transition-all duration-300">
+          <i class="fas fa-tasks text-2xl text-yellow-400 mb-3"></i>
+          <p class="font-bold">Create Task</p>
+          <p class="text-slate-400 text-sm">From email or chat</p>
+        </button>
+        <button class="card-hover bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/10 rounded-xl p-5 transition-all duration-300">
+          <i class="fas fa-file-alt text-2xl text-purple-400 mb-3"></i>
+          <p class="font-bold">Generate Summary</p>
+          <p class="text-slate-400 text-sm">Weekly recap AI</p>
+        </button>
+      </div>
+    </div>
+
+    <!-- Integrations -->
+    <div class="mt-8">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+        <i class="fas fa-plug text-blue-400"></i> Integrations
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="fab fa-google text-2xl"></i>
+            <span class="font-medium">Gmail</span>
+          </div>
+          <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded">Connected</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="fab fa-google text-2xl"></i>
+            <span class="font-medium">Google Calendar</span>
+          </div>
+          <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded">Connected</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="fab fa-slack text-2xl"></i>
+            <span class="font-medium">Slack</span>
+          </div>
+          <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded">Connected</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-tasks text-2xl"></i>
+            <span class="font-medium">Todoist</span>
+          </div>
+          <button class="text-indigo-400 text-xs">Connect</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-white/10 mt-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-slate-500 text-sm"><i class="fas fa-robot mr-2"></i>PersonalForge - AI Personal Operations Assistant • <i class="fas fa-heart text-red-400"></i> by Tigha66</p>
+    </div>
+  </footer>
+</body>
+</html>
