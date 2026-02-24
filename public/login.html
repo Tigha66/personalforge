@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - PersonalForge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    .glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+    .gradient-text{background:linear-gradient(135deg,#34d399,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  </style>
+</head>
+<body class="bg-[#0a0a0f] min-h-screen text-white flex items-center justify-center">
+  <div class="w-full max-w-md p-8">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-robot text-3xl"></i>
+      </div>
+      <h1 class="text-3xl font-bold gradient-text">PersonalForge</h1>
+      <p class="text-slate-400 mt-2">AI Personal Operations Assistant</p>
+    </div>
+    
+    <div class="glass rounded-2xl p-8">
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-slate-400 text-sm mb-2">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-slate-500">
+        </div>
+        <div>
+          <label class="block text-slate-400 text-sm mb-2">Password</label>
+          <input type="password" id="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-slate-500">
+        </div>
+        <button type="submit" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-semibold hover:opacity-90 transition">
+          Sign In
+        </button>
+      </form>
+    </div>
+    
+    <div class="mt-8">
+      <h3 class="text-center text-slate-400 mb-4">Choose your plan</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="glass rounded-xl p-4 text-center">
+          <p class="font-bold">Creator</p>
+          <p class="text-2xl font-bold text-emerald-400">$9<span class="text-sm">/mo</span></p>
+          <button onclick="subscribe('creator')" class="w-full mt-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm">Subscribe</button>
+        </div>
+        <div class="glass rounded-xl p-4 text-center border border-teal-500/50">
+          <p class="font-bold">Pro</p>
+          <p class="text-2xl font-bold text-teal-400">$29<span class="text-sm">/mo</span></p>
+          <button onclick="subscribe('pro')" class="w-full mt-3 py-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg text-sm">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = 'app.html';
+    });
+    function subscribe(plan) {
+      alert('Stripe Checkout: ' + plan.toUpperCase() + ' plan - $' + (plan === 'creator' ? '9' : '29') + '/month\n\nIn production, this redirects to Stripe!');
+    }
+  </script>
+</body>
+</html>
